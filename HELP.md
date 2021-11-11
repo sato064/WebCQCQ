@@ -8,9 +8,9 @@ The following was discovered as part of building this project:
 ### Reference Documentation
 For further reference, please consider the following sections:
 
-* [Official Apache Maven documentation](https://maven.apache.org/guides/index.html)
-* [Spring Boot Maven Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6/maven-plugin/reference/html/)
-* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.6/maven-plugin/reference/html/#build-image)
+* [Official Gradle documentation](https://docs.gradle.org)
+* [Spring Boot Gradle Plugin Reference Guide](https://docs.spring.io/spring-boot/docs/2.5.6/gradle-plugin/reference/html/)
+* [Create an OCI image](https://docs.spring.io/spring-boot/docs/2.5.6/gradle-plugin/reference/html/#build-image)
 * [Spring Native Reference Guide](https://docs.spring.io/spring-native/docs/current/reference/htmlsingle/)
 * [Spring Boot DevTools](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#using-boot-devtools)
 * [Spring Web](https://docs.spring.io/spring-boot/docs/2.5.6/reference/htmlsingle/#boot-features-developing-web-applications)
@@ -36,7 +36,8 @@ The following guides illustrate how to use some features concretely:
 ### Additional Links
 These additional references should also help you:
 
-* [Configure the Spring AOT Plugin](https://docs.spring.io/spring-native/docs/0.10.5/reference/htmlsingle/#spring-aot-maven)
+* [Gradle Build Scans – insights for your project's build](https://scans.gradle.com#gradle)
+* [Configure the Spring AOT Plugin](https://docs.spring.io/spring-native/docs/0.10.5/reference/htmlsingle/#spring-aot-gradle)
 
 ## Spring Native
 
@@ -49,7 +50,7 @@ Docker should be installed and configured on your machine prior to creating the 
 To create the image, run the following goal:
 
 ```
-$ ./mvnw spring-boot:build-image
+$ ./gradlew bootBuildImage
 ```
 
 Then, you can run the app like any other container:
@@ -65,10 +66,10 @@ The GraalVM native-image compiler should be installed and configured on your mac
 To create the executable, run the following goal:
 
 ```
-$ ./mvnw package -Pnative
+$ ./gradlew nativeBuild
 ```
 
 Then, you can run the app as follows:
 ```
-$ target/WebCQCQ
+$ build/native-image/WebCQCQ
 ```
